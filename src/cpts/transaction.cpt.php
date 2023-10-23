@@ -1,11 +1,11 @@
 <?php
 class TransactionCPT extends CPTFactory {
   function __construct() {
-    $this->slug = 'transactions';
+    $this->post_type = 'transactions';
     $this->singularName = 'Transação';
     $this->pluralName = 'Transações';
     $this->menuIcon = 'dashicons-hourglass';
-    parent::create();
+    parent::register();
   }
 }
 $register = new TransactionCPT();

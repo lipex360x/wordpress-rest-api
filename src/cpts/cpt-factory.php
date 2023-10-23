@@ -1,6 +1,6 @@
 <?php
 class CPTFactory {
-  function create() {
+  function register() {
     $labels = array(
       'name' => $this->pluralName,
       'sigular_name' => $this->singularName,
@@ -18,7 +18,7 @@ class CPTFactory {
       'supports'      => array('title', 'author'),
     );
 
-    register_post_type($this->slug, $args);
+    register_post_type($this->post_type, $args);
     add_action('pre_get_posts', array($this, 'set_queries_callback'));
   }
 
