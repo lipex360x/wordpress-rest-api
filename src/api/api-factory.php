@@ -1,5 +1,5 @@
 <?php
-class APIFactory{
+class APIFactory {
   private $search;
   private $page;
   private $perPage;

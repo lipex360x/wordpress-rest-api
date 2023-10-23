@@ -3,10 +3,10 @@ class CPTFactory {
   function register() {
     $labels = array(
       'name' => $this->pluralName,
-      'sigular_name' => $this->singularName,
-      'add_new_item' => "Adicionar novo {$this->singularName}",
-      'edit_item' => "Editar {$this->singularName}",
-      'all_items' => "Todos {$this->pluralName}",
+      'sigular_name'  => $this->singularName,
+      'add_new_item'  => "Adicionar novo {$this->singularName}",
+      'edit_item'     => "Editar {$this->singularName}",
+      'all_items'     => "Todos {$this->pluralName}",
     );
 
     $args = array(
