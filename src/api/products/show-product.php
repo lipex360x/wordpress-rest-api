@@ -11,7 +11,7 @@ class ShowProduct extends APIFactory {
   function response($items) {
     $data = $items->posts[0];
     $image = get_field('image', $data->ID)['sizes']["medium"];
-    return new Product($data->post_title, $data->value, $image);
+    return new Product($data->ID, $data->post_name, $data->post_title, $data->value, $image);
   }
 }
 

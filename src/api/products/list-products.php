@@ -10,9 +10,9 @@ class ListProducts extends APIFactory {
 
   function response($items) {
     $output = array();
-    foreach ($items->posts as $item) {
-      $image = get_field('image', $item->ID)['sizes']["medium"];
-      $product = new Product($item->post_title, $item->value, $image);
+    foreach ($items->posts as $data) {
+      $image = get_field('image', $data->ID)['sizes']["medium"];
+      $product = new Product($data->ID, $data->post_name, $data->post_title, $data->value, $image);
       array_push($output, $product);
     }
     return $output;
