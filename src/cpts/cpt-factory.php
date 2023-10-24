@@ -19,16 +19,5 @@ class CPTFactory {
     );
 
     register_post_type($this->post_type, $args);
-    add_action('pre_get_posts', array($this, 'callbackQuery'));
-  }
-
-  function callbackQuery($query) {
-    $archive = is_archive() ? get_queried_object()->name : false;
-    
-    if(!is_admin() && $query->is_main_query() && is_post_type_archive($archive)) {
-      $query->set('orderby', 'title');
-      $query->set('order', 'ASC');
-      $query->set('posts_per_page', -1);
-    }  
   }
 }
